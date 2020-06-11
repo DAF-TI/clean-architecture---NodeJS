@@ -1,4 +1,4 @@
-export default function makeCreateConta ({ createConta }) {
+export default function makePostConta ({ createConta }) {
   return async function postConta (httpRequest) {
     try {
       const { source = {}, ...commentInfo } = httpRequest.body

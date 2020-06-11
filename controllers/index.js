@@ -2,13 +2,13 @@ import {
   createConta
 } from '../use-cases'
 
-import makeCreateConta from './create-conta'
+import makePostConta from './create-conta'
 
-const createConta = makeCreateConta({ createConta })
+const postConta = makePostConta({ createConta })
 
 const contaController = Object.freeze({
-  createConta
+  postConta
 })
 
 export default contaController
-export { createConta }
+export { postConta }
