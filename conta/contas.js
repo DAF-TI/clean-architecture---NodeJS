@@ -1,4 +1,4 @@
-export default function buildMakeConta({ Id, isValidaConta }) {
+export default function buildMakeConta({ Id, isValidaConta, makeSource }) {
   return function makeConta({
     idConta = Id.makeId(),
     idPessoa,
@@ -6,8 +6,11 @@ export default function buildMakeConta({ Id, isValidaConta }) {
     limiteSaqueDiario,
     flagAtivo,
     tipoConta,
-    dataCriacao = Date.now()
+    dataCriacao = Date.now(),
+    source
   } = {}) {
+
+    const validSource = makeSource(source)
 
     if (saldo < 0) {
       throw new Error('Saldo não pode ser negativo.')
@@ -23,7 +26,7 @@ export default function buildMakeConta({ Id, isValidaConta }) {
       getFlagAtivo: () => flagAtivo,
       getTipoConta: () => tipoConta,
       getDataCriacao: () => dataCriacao,
-
+      getSource: () => validSource
     })
   }
 }

@@ -1,8 +1,10 @@
 import Id from '../Id'
 import buildMakeConta from './contas'
 import buildMakeTransacao from './transacoes'
+import buildMakeSource from './source'
 
-const makeConta = buildMakeConta({ Id, isValidaConta })
+const makeSource = buildMakeSource()
+const makeConta = buildMakeConta({ Id, isValidaConta, makeSource })
 const makeTransacao = buildMakeTransacao()
 
 function isValidaConta (tipoConta) {

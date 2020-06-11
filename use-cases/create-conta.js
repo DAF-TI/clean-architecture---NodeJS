@@ -1,7 +1,7 @@
 import makeConta from '../conta'
 
 export default function makeCreateConta ({ contasDb }) {
-  return async function createConta (contaInfo) {
+  return async function createConta (contaInfo, source) {
     const conta = makeConta(contaInfo)
     const exists = await contasDb.findById(conta.getIdConta() )
     if (exists) {
@@ -15,7 +15,12 @@ export default function makeCreateConta ({ contasDb }) {
       limiteSaqueDiario: conta.getLimiteSaqueDiario(),
       flagAtivo: conta.getFlagAtivo(),
       tipoConta: conta.getTipoConta(),
-      dataCriacao: conta.getDataCriacao()
+      dataCriacao: conta.getDataCriacao(),
+      source: {
+        ip: source.getIp(),
+        browser: source.getBrowser(),
+        referrer: source.getReferrer()
+      }
     })
   }
 }
