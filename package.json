@@ -1,9 +1,8 @@
- {
+{
   "name": "banco-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  
   "scripts": {
     "build": "npm run clean && babel . -d dist",
     "now-build": "npm run build",
@@ -12,7 +11,7 @@
     "dev": "nodemon --exec babel-node ./src/index.js",
     "start": "npm run clean && npm run build && npm run db && cd dist && node index.js",
     "test": "jest data-access --watch",
-    "teste1" : "npm run teste.js",
+    "teste1": "npm run teste.js",
     "test:e2e": "jest ./__test__ --runInBand"
   },
   "author": "Alberto Freitas <alberto.freitas.branco@gmail.com>",

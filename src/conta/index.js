@@ -12,5 +12,4 @@ function isValidaConta (tipoConta) {
 }
 
 export default makeConta
-export default makeTransacao
 
