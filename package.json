@@ -1,8 +1,9 @@
-{
+cd {
   "name": "banco-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type" : "module",
   
   "scripts": {
     "build": "npm run clean && babel src -d dist",
