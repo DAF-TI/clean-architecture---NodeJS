@@ -2,15 +2,16 @@
   "name": "banco-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",  
-  "type": "module",  "scripts": {
+  "main": "index.js",
+  
+  "scripts": {
     "build": "npm run clean && babel src -d dist",
     "now-build": "npm run build",
     "clean": "rimraf dist",
     "db": "babel-node ./db/index.js",
     "dev": "nodemon --exec babel-node ./src/index.js",
     "start": "npm run clean && npm run build && npm run db && cd dist && node index.js",
-    "test": "jest src --watch",
+    "test": "jest data-access --watch",
     "test:e2e": "jest ./__test__ --runInBand"
   },
   "author": "Alberto Freitas <alberto.freitas.branco@gmail.com>",

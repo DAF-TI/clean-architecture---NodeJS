@@ -1,4 +1,0 @@
-{ 
-    "mongoUri" : "mongodb://localhost:27017",
-    "mongoDBName" : "dm_desafioDock"
-}

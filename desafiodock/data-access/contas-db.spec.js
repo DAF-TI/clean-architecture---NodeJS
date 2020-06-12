@@ -1,6 +1,9 @@
-import makeDb from '../../__test__/fixtures/db'
-import makeContasDb from './contas-db'
-import makeFakeConta from '../../__test__/fixtures/conta'
+//import makeDb from '../../__test__/fixtures/db'
+const makeDb = require('../__test__/fixtures/db')
+//import makeContasDb from './contas-db'
+const makeContasDb = require('./contas-db')
+//import makeFakeConta from '../../__test__/fixtures/conta'
+const makeFakeConta = require('../__test__/fixtures/conta')
 
 describe('contas db', () => {
   let contasDb
