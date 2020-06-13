@@ -8,9 +8,8 @@ export default function buildMakeConta({ Id, isValidaConta, makeSource }) {
     tipoConta,
     dataCriacao = Date.now(),
     source
-  } = {}) {
-
-    const validSource = makeSource(source)
+  } ) {
+     const validSource = makeSource(source)
 
     if (saldo < 0) {
       throw new Error('Saldo não pode ser negativo.')
@@ -18,7 +17,7 @@ export default function buildMakeConta({ Id, isValidaConta, makeSource }) {
     if (!isValidaConta(tipoConta)) {
       throw new Error('Tipo de conta inválido.')
     }
-    return Object.freeze({
+    const retorno = Object.freeze({
       getIdConta: () => idConta,
       getIdPessoa: () => idPessoa,
       getSaldo: () => saldo,
@@ -27,6 +26,7 @@ export default function buildMakeConta({ Id, isValidaConta, makeSource }) {
       getTipoConta: () => tipoConta,
       getDataCriacao: () => dataCriacao,
       getSource: () => validSource
-    })
+    })   
+    return retorno
   }
 }

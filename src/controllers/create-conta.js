@@ -1,14 +1,15 @@
 export default function makePostConta ({ createConta }) {
   return async function postConta (httpRequest) {
     try {
-      const { source = {}, ...commentInfo } = httpRequest.body
+      const { source = {}, ...contatInfo } = httpRequest.body
       source.ip = httpRequest.ip
       source.browser = httpRequest.headers['User-Agent']
       if (httpRequest.headers['Referer']) {
         source.referrer = httpRequest.headers['Referer']
       }
+      
       const posted = await createConta({
-        ...commentInfo,
+        ...contatInfo,
         source
       })
       return {

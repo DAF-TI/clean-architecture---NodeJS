@@ -16,14 +16,11 @@ function md5 (text) {
 
 export default function makeFakeConta (overrides) {
   const conta = {
-    author: faker.name.findName(),
-    createdOn: Date.now(),
-    id: Id.makeId(),
-    modifiedOn: Date.now(),
-    postId: Id.makeId(),
-    published: true,
-    replyToId: Id.makeId(),
-    text: faker.lorem.paragraph(3),
+    idPessoa: Id.makeId(),
+    saldo: faker.random.number(),
+    limiteSaqueDiario: faker.random.number(),
+    flagAtivo: true,
+    tipoConta: "Corrente",
     source: {
       ip: faker.internet.ip(),
       browser: faker.internet.userAgent(),
@@ -37,7 +34,7 @@ export default function makeFakeConta (overrides) {
       (conta.postId || '') +
       (conta.replyToId || '')
   )
-
+ 
   return {
     ...conta,
     ...overrides

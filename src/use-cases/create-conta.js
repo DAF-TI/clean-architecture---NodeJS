@@ -17,9 +17,9 @@ export default function makeCreateConta ({ contasDb }) {
       tipoConta: conta.getTipoConta(),
       dataCriacao: conta.getDataCriacao(),
       source: {
-        ip: source.getIp(),
-        browser: source.getBrowser(),
-        referrer: source.getReferrer()
+        ip: conta.getSource().getIp(),
+        browser: conta.getSource().getBrowser(),
+        referrer: conta.getSource().getReferrer()
       }
     })
   }

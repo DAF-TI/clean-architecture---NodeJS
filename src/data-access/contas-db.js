@@ -4,7 +4,8 @@ export default function makeContasDb ({ makeDb }) {
   return Object.freeze({
     findAll,
     findById,
-    insert
+    insert,
+    remove
   })
 
   async function findAll ({ publishedOnly = true } = {}) {
@@ -35,6 +36,12 @@ export default function makeContasDb ({ makeDb }) {
       .insertOne({ _id, ...contasInfo })
     const { _id: id, ...insertedInfo } = result.ops[0]
     return { id, ...insertedInfo }
+  }
+
+  async function remove ({ id: _id }) {
+    const db = await makeDb()
+    const result = await db.collection('Contas').deleteOne({ _id })
+    return result.deletedCount
   }
 
 }
