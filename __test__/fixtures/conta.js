@@ -21,6 +21,7 @@ export default function makeFakeConta (overrides) {
     limiteSaqueDiario: faker.random.number(),
     flagAtivo: true,
     tipoConta: "Corrente",
+    published: true, 
     source: {
       ip: faker.internet.ip(),
       browser: faker.internet.userAgent(),
