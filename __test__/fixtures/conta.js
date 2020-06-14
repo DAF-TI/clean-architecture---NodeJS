@@ -16,6 +16,8 @@ function md5 (text) {
 
 export default function makeFakeConta (overrides) {
   const conta = {
+    id:Id.makeId(),
+    idConta:Id.makeId(),
     idPessoa: Id.makeId(),
     saldo: faker.random.number(),
     limiteSaqueDiario: faker.random.number(),
